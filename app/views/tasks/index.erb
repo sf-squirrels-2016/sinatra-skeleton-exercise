@@ -1,0 +1,11 @@
+<h1>Welcome to the List</h1>
+<main>
+  <div id="task_list"><ul>
+    <% @list.each do |task| %>
+    <%= erb :'tasks/_task', :layout => false, :locals => {:task_name => task.name, :task_id => task.id} %>
+    <%end%>
+  </div>
+  <div id="add_task_area">
+    <a class="add_task" href="/tasks/new">Add a new task</a>
+  </div>
+</main>
